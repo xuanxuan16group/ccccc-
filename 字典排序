@@ -1,0 +1,16 @@
+dic = {}
+print("姓名输入quit时结束本次录入")
+while True:
+    name = input("请输入选手姓名\n")
+    if name == 'quit':
+        break
+    score = int(input('请输入选手得票\n'))
+    dic[name] = score
+
+li = []
+for item in dic.items():
+    li.append([item[1],item[0]])
+
+li.sort(reverse=True)
+for index,l in enumerate(li,start=1):
+    print(f'第{index}名 {l[1]}{l[0]}')
